@@ -1,4 +1,15 @@
 from dataclasses import dataclass
+import os
+
+# Configure PyTorch properly for Windows
+os.environ["TORCH_COMPILE_BACKEND"] = "eager"  # Use eager mode instead of inductor
+
+# Tell PyTorch to suppress errors related to triton/inductor
+try:
+    import torch._dynamo
+    torch._dynamo.config.suppress_errors = True
+except ImportError:
+    pass
 from typing import List, Tuple
 
 import torch

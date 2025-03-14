@@ -5,6 +5,14 @@ import torch.nn as nn
 import torchtune
 from torchtune.models import llama3_2
 
+# Triton is not available on Windows, but CSM can run without it
+try:
+    import triton
+    print("Triton is available (unexpected on Windows)")
+except ImportError:
+    print("Triton not available, running without GPU optimizations")
+    # This is expected on Windows - the code will still work but may be slower
+
 
 def llama3_2_1B() -> torchtune.modules.transformer.TransformerDecoder:
     return llama3_2.llama3_2(

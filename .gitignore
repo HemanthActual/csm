@@ -1,0 +1,8 @@
+
+\.venv
+\__pycache__
+*.wav
+\local_models
+\voices
+local_config.py        
+*.bak                  

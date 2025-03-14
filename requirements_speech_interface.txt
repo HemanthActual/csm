@@ -1,0 +1,11 @@
+# Additional requirements for speech-to-speech interface
+pyaudio==0.2.13
+numpy>=1.20.0
+openai-whisper>=20231117
+accelerate>=0.23.0
+SpeechRecognition>=3.10.0
+sentencepiece>=0.1.99
+gradio>=4.4.0
+ffmpeg-python>=0.2.0
+# For LLM integration
+bitsandbytes>=0.41.1  # For LLM quantization

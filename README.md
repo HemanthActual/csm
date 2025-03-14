@@ -17,8 +17,14 @@ Setup the repo
 ```bash
 git clone git@github.com:SesameAILabs/csm.git
 cd csm
-python3.10 -m venv .venv
-source .venv/bin/activate
+
+# Create virtual environment with your current Python
+python -m venv .venv
+
+# Activate the virtual environment
+.\.venv\Scripts\activate
+
+# Install requirements
 pip install -r requirements.txt
 ```
 
