@@ -1,6 +1,6 @@
 # CSM
 
-**2025/03/13** - We are releasing the 1B CSM variant. The checkpoint is [hosted on HuggingFace](https://huggingface.co/sesame/csm_1b).
+**2025/03/13** - We are releasing the 1B CSM variant. The checkpoint is [hosted on Hugging Face](https://huggingface.co/sesame/csm_1b).
 
 ---
 
@@ -8,11 +8,16 @@ CSM (Conversational Speech Model) is a speech generation model from [Sesame](htt
 
 A fine-tuned variant of CSM powers the [interactive voice demo](https://www.sesame.com/voicedemo) shown in our [blog post](https://www.sesame.com/research/crossing_the_uncanny_valley_of_voice).
 
-A hosted [HuggingFace space](https://huggingface.co/spaces/sesame/csm-1b) is also available for testing audio generation.
+A hosted [Hugging Face space](https://huggingface.co/spaces/sesame/csm-1b) is also available for testing audio generation.
 
-## Usage
+## Requirements
 
-Setup the repo
+* A CUDA-compatible GPU
+* The code has been tested on CUDA 12.4 and 12.6, but it may also work on other versions
+* Simiarly, Python 3.10 is recommended, but newer versions may be fine
+* For some audio operations, `ffmpeg` may be required
+
+### Setup
 
 ```bash
 git clone git@github.com:SesameAILabs/csm.git
@@ -27,6 +32,12 @@ python -m venv .venv
 # Install requirements
 pip install -r requirements.txt
 ```
+
+### Windows Setup
+
+The `triton` package cannot be installed in Windows. Instead use `pip install triton-windows`.
+
+## Usage
 
 Generate a sentence
 
@@ -109,5 +120,7 @@ This project provides a high-quality speech generation model for research and ed
 
 By using this model, you agree to comply with all applicable laws and ethical guidelines. We are **not responsible** for any misuse, and we strongly condemn unethical applications of this technology.
 
-**Authors**
+---
+
+## Authors
 Johan Schalkwyk, Ankit Kumar, Dan Lyth, Sefik Emre Eskimez, Zack Hodari, Cinjon Resnick, Ramon Sanabria, Raven Jiang, and the Sesame team.
